@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <title>WhatsApp</title>
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body class="font-roboto">
+    
+  <!-- whole container -->
+  <div class="flex flex-row h-screen">
+
+    <!-- left section -->
+    <div class="lg:w-1/3 md:w-3/6 w-full flex flex-col relative border-r border-gray-hover">
+      <!-- navbar -->
+      <nav class="bg-gray-400 px-4 py-2.5">
+        <!-- navbar container -->
+        <div class="flex flex-row items-center justify-between">
+          <!-- left logo -->
+          <img class="w-10 h-10 rounded-full object-cover cursor-pointer" src="https://images.unsplash.com/photo-1601217672201-cca23494ed2c?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" draggable="false">
+
+          <!-- right icons -->
+          <div class="flex items-center space-x-4">
+            <svg class="h-10 w-8 text-gray-300 p-1 cursor-pointer" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20.664a9.163 9.163 0 0 1-6.521-2.702.977.977 0 0 1 1.381-1.381 7.269 7.269 0 0 0 10.024.244.977.977 0 0 1 1.313 1.445A9.192 9.192 0 0 1 12 20.664zm7.965-6.112a.977.977 0 0 1-.944-1.229 7.26 7.26 0 0 0-4.8-8.804.977.977 0 0 1 .594-1.86 9.212 9.212 0 0 1 6.092 11.169.976.976 0 0 1-.942.724zm-16.025-.39a.977.977 0 0 1-.953-.769 9.21 9.21 0 0 1 6.626-10.86.975.975 0 1 1 .52 1.882l-.015.004a7.259 7.259 0 0 0-5.223 8.558.978.978 0 0 1-.955 1.185z"></path></svg>
+            <svg  class="h-10 w-8 text-gray-300 p-1 cursor-pointer" viewBox="0 0 24 24"><path fill="currentColor" d="M19.005 3.175H4.674C3.642 3.175 3 3.789 3 4.821V21.02l3.544-3.514h12.461c1.033 0 2.064-1.06 2.064-2.093V4.821c-.001-1.032-1.032-1.646-2.064-1.646zm-4.989 9.869H7.041V11.1h6.975v1.944zm3-4H7.041V7.1h9.975v1.944z"></path></svg>
+            <svg class="h-8 w-8 text-gray-300 p-1 cursor-pointer rounded-full hover:bg-gray-700" id="menuBtn" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z"></path></svg>
+          </div>
+        </div>
+      </nav>
+
+      <!-- input container -->
+      <div class="bg-gray-700 py-2 px-3 flex flex-auto border-b border-gray-400">
+        <!-- input box -->
+        <div class="flex flex-auto items-center bg-inputBoxBg p-1.5 rounded-full">
+          <svg class="h-6 w-6 text-gray-300 p-1 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        <input class="flex flex-auto bg-transparent ml-4 border-none outline-none text-sm font-light text-gray-100 placeholder-gray-300" type="text" placeholder="Search or start new chat">
+        </div>
+      </div>
+
+
+      <!-- contacts chats list -->
+      <div class="flex flex-col bg-gray-700 overflow-y-auto overflow-x-hidden" id="contact-list">
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 bg-gray-hover hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="./assets/images/profile.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Dev-ip</h3>
+              <span class="text-gray-300 text-xs font-light">today</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="truncate overflow-ellipsis w-11/12 text-gray-300 text-sm font-light"> Yes Guys Its a Chat GPT Generated Message 🧛‍♀️</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>  
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Didi </h3>
+              <span class="text-gray-300 text-xs font-light">today</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="truncate w-11/12 text-gray-300 text-sm font-light">Kal Aa Jana </h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+        
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1650501890365-ef99bb8c715f?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Yash Bhaiya</h3>
+              <span class="text-gray-300 text-xs font-light">today</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">puch ke batana </h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://cdn-1.webcatalog.io/catalog/amazon-ae/amazon-ae-icon-filled.png?v=1743386417946" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Amazon</h3>
+              <span class="text-gray-300 text-xs font-light">yesterday</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Delivered: Your Amazon package with 1...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="data:image/png;base64,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" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">VIVOIN</h3>
+              <span class="text-gray-300 text-xs font-light">12-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">This chat is with VIVOIN'S verified accou...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://media.istockphoto.com/id/1277971635/photo/portrait-of-a-smiling-man-of-indian-ethnicity.webp?a=1&b=1&s=612x612&w=0&k=20&c=WDut88fKkZMl0aqIC7s7GmZuvnv4xN9xsqdhXtYqpqE=" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">+91 8024671679</h3>
+              <span class="text-gray-300 text-xs font-light">12-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Okk Mam Thankyu</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1660196817411-e89aa03f92fe?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Priya</h3>
+              <span class="text-gray-300 text-xs font-light">12-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Check Mail Fast</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://media.istockphoto.com/id/1407241151/photo/students-raising-hands-while-teacher-asking-them-questions-in-classroom.jpg?s=1024x1024&w=is&k=20&c=Pfqe-SGJkKW1ad2v8OJkWf0SKpABvDVXY3znToZbBiE=" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">School Group </h3>
+              <span class="text-gray-300 text-xs font-light">12-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">+91 8998457535 changed their phone...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2015/03/03/08/55/portrait-657116_960_720.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Sneha Di </h3>
+              <span class="text-gray-300 text-xs font-light">12-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Bhej ke bta dena okkk</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2021/03/27/19/25/alone-boy-6129399_960_720.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Sam</h3>
+              <span class="text-gray-300 text-xs font-light">11-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Dev Ka Contact No Hai Kya Jaruri Kam Tha...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://i.pinimg.com/736x/6f/2f/a9/6f2fa9097340ee72bc2c783cc2ea4552.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Mamma </h3>
+              <span class="text-gray-300 text-xs font-light">11-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Call Karke Puch Lena </h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2019/11/30/12/10/girl-4663125_960_720.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Annu Friend </h3>
+              <span class="text-gray-300 text-xs font-light">11-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Sara Pic Send Kro N </h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2016/03/26/22/13/man-1281562_960_720.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">91 8210293580</h3>
+              <span class="text-gray-300 text-xs font-light">11-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">+91 8210293580 used a default timer f...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2021/06/15/12/14/instagram-6338393_1280.png" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Instagram</h3>
+              <span class="text-gray-300 text-xs font-light">11-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">341387 is your Instgram login code. It should</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2021/06/15/16/11/man-6339003_960_720.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Sanju Mama </h3>
+              <span class="text-gray-300 text-xs font-light">07-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Your security code with Sanju Mama changed. Ta...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2017/10/01/17/21/girl-2806276_960_720.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Sinu Beta</h3>
+              <span class="text-gray-300 text-xs font-light">07-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Your security code with Sinu Beta  changed. Ta...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://media.istockphoto.com/id/1139722168/photo/mid-adult-man-smiling-on-gray-background.jpg?s=612x612&w=0&k=20&c=fLgqnldmSlNHU-fooFM1dlyF4Fo1gqx8yDJsmkz-AHw=" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Productio Manager</h3>
+              <span class="text-gray-300 text-xs font-light">05-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Send Me Cient Details Fast</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2015/05/27/16/57/profile-786909_960_720.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Puja Di </h3>
+              <span class="text-gray-300 text-xs font-light">05-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Your security code with Puja Di changed. Ta...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1515615791787-d8e0022e233f?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">My Editor </h3>
+              <span class="text-gray-300 text-xs font-light">05-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Change Song Bro Add This Song...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">Desiner Sir </h3>
+              <span class="text-gray-300 text-xs font-light">02-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Sir Thoda Der Me Free Hoke Call Karte Hai </h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+
+        <!-- chat list item -->
+        <div class="flex flex-auto items-center space-x-1 cursor-pointer px-4 p-3 hover:bg-gray-hover" id="contact-list-item">
+          
+          <img class="w-12 h-12 rounded-full object-cover" src="https://mir-s3-cdn-cf.behance.net/projects/404/640791221002065.Y3JvcCwyMzE3LDE4MTIsMTc0OSw0NjQ.jpg" alt="" draggable="false">
+
+          <!-- chat desc container -->
+          <div class="flex flex-col flex-auto justify-between py-1 pl-2">
+            <!-- name & time container -->
+            <div class="flex justify-between items-center">
+              <h3 class="text-gray-100 truncate">JioAirFiber</h3>
+              <span class="text-gray-300 text-xs font-light">02-04-2025</span>
+            </div>
+
+            <!-- msg container -->
+            <div class="flex items-center justify-between">
+              <h3 class="w-11/12 truncate overflow-ellipses text-gray-300 text-sm font-light">Bring your home entertainment to life with J...</h3>
+              <svg class="arrow text-gray-300 hidden transition duration-500 ease-out" viewBox="0 0 19 20" width="19" height="20"><path fill="currentColor" d="M3.8 6.7l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-auto ml-16 border-b border-gray-hover"></div>
+        
+
+      </div>
+
+      <!-- menu bar toggle buttons -->
+      <div class="absolute hidden right-6 top-12 rounded bg-gray-400 shadow-2xl transition duration-1000 ease-out" id="menuItems">
+        <div class="relative flex flex-col flex-auto justify-start w-44 pt-2 pb-2">
+          <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-7 py-2.5" href="">New group</a>
+          <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-7 py-2.5" href="">Create a room</a>
+          <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-7 py-2.5" href="">Profile</a>
+          <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-7 py-2.5" href="">Archived</a>
+          <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-7 py-2.5" href="">Starred</a>
+          <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-7 py-2.5" href="">Settings</a>
+          <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-7 py-2.5" href="">Logout</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- right section -->
+    <div class="relative hidden md:flex bg-gray-900 flex-auto flex-col">
+      <!-- top navbar -->
+      <nav class="bg-gray-400 px-4 py-2">
+        <!-- navbar container -->
+        <div class="flex flex-auto items-center">
+          <img class="w-11 h-11 rounded-full object-cover cursor-pointer" src="./assets/images/profile.jpg" alt="" draggable="false">
+
+          <!-- middle nav -->
+          <div class="flex flex-col ml-4 flex-auto cursor-pointer">
+            <h3 class="text-gray-100 font-bold">Dev-ip</h3>
+            <span class="text-gray-300 text-xs font-light">online</span>
+          </div>
+
+          <!-- right nav icons -->
+          <div class="flex items-center space-x-3">
+            <svg class="h-8 w-8 text-gray-300 p-1 cursor-pointer" viewBox="0 0 24 24"><path fill="currentColor" d="M15.9 14.3H15l-.3-.3c1-1.1 1.6-2.7 1.6-4.3 0-3.7-3-6.7-6.7-6.7S3 6 3 9.7s3 6.7 6.7 6.7c1.6 0 3.2-.6 4.3-1.6l.3.3v.8l5.1 5.1 1.5-1.5-5-5.2zm-6.2 0c-2.6 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2 4.6-4.6 4.6z"></path></svg>
+            <svg class="h-8 w-8 text-gray-300 p-1 cursor-pointer rounded-full hover:bg-gray-700" id="menuBtn2" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z"></path></svg>
+          </div>
+
+        </div>
+      </nav>
+
+    
+      <!-- chat section -->
+      <div class="flex overflow-y-auto h-5/6 bg-gray-900 mb-1" id="chats-container">
+        <!-- messages container -->
+        <div class="mx-auto w-4/5 p-0 lg:p-2 relative" id="msgContainer">
+          <!-- day container sticky -->
+          <span class="top-1 -ml-56 z-10 py-1.5 px-3 sticky bg-gray-700 text-sm text-gray-100 rounded-md shadow-md">TODAY</span>
+          <!-- messages -->
+
+          <!-- left message -->
+          <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">Kya kar rahi ho? 😶</p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+          <!-- left message -->
+          <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">Hello</p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+          <!-- left message -->
+          <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">Kal ek mast phishing page banaya... pura original jaise lag raha tha 😏🎣 </p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+           <!-- right message -->
+          <div class="right-msg">
+            <p class="mr-16 max-w-md text-gray-100 text-sm font-light"> 😱 Arey hacker babu, kisliye banaya?</p>
+            <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+            <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+          </div>
+
+          <!-- left message -->
+          <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">Practice ke liye... awareness ke bina log kitne easily trap ho jaate hain dekhne ke लिए 😌</p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+          <!-- right message -->
+          <div class="right-msg">
+            <p class="mr-16 max-w-md text-gray-100 text-sm font-light"> Sach mein... aaj kal log strong password bhi nahi rakhte 😒</p>
+            <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+            <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+          </div>
+
+          <!-- right message -->
+          <div class="right-msg">
+            <p class="mr-16 max-w-md text-gray-100 text-sm font-light">😇😇</p>
+            <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+            <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+          </div>
+
+          <!-- left message -->
+          <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light"> Exactly! "123456" aur "password" wale password abhi bhi popular hain 😂</p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+          <!-- right message -->
+          <div class="right-msg">
+            <p class="mr-16 max-w-md text-gray-100 text-sm font-light">Exactly! "123456" aur "password" wale password Btw mujhe bhi apne accounts secure karne hai... help karoge? 🙈abhi bhi popular hain 😂</p>
+            <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+            <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+          </div>
+
+           <!-- left message -->
+           <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">100% 🔥 Strong password + 2FA + thoda sa common sense = safe account 😎</p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+          <!-- left message -->
+          <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">😎😎</p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+          <!-- left message -->
+          <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">hello </p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+           <!-- right message -->
+          <div class="right-msg">
+            <p class="mr-16 max-w-md text-gray-100 text-sm font-light">Aur koi secret trick?</p>
+            <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+            <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+          </div>
+
+          <!-- left message -->
+          <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">Haan... kabhi kisi unknown link pe click mat karna.
+Aur apne crush ko apna OTP mat dena 😜</p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+          <!-- right message -->
+          <div class="right-msg">
+            <p class="mr-16 max-w-md text-gray-100 text-sm font-light">😳 Matlab tumko bhi nahi dungi! 😂</p>
+            <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+            <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+          </div>
+
+          <!-- right message -->
+          <div class="right-msg">
+            <p class="mr-16 max-w-md text-gray-100 text-sm font-light">?</p>
+            <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+            <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+          </div>
+
+          <!-- left message -->
+          <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">😭 Maine kab maanga... main to aise hi advice de raha tha!</p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+
+          <!-- right message -->
+          <div class="right-msg">
+            <p class="mr-16 max-w-md text-gray-100 text-sm font-light">Chill hacker babu... mazak kar rahi thi 🤭 </p>
+            <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+            <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+          </div>
+
+           <!-- left message -->
+           <div class="left-msg">
+            <p class="mr-14 max-w-md text-gray-100 text-sm font-light">Accha, jab bhi tumhara account secure karna ho, mujhe yaad kar lena! 🛡️ </p>
+            <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+          </div>
+        
+        <!-- right message -->
+        <div class="right-msg">
+          <p class="mr-16 max-w-md text-gray-100 text-sm font-light"> Pakka... mera personal cyber bodyguard banoge? 😂</p>
+          <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+          <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+           style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+        </div>
+          
+        <!-- left message -->
+        <div class="left-msg">
+          <p class="mr-14 max-w-md text-gray-100 text-sm font-light"> 24x7 available... sirf tumhare liye! 😌</p>
+          <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+        </div>
+
+        <!-- left message -->
+        <div class="left-msg">
+          <p class="mr-14 max-w-md text-gray-100 text-sm font-light">Ok BY Good Night😴😪 </p>
+          <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+        </div>
+
+         <!-- right message -->
+        <div class="right-msg">
+          <p class="mr-16 max-w-md text-gray-100 text-sm font-light">By Good Night🎀 </p>
+          <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+          <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+           style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+        </div>
+          
+        <!-- left message -->
+        <div class="left-msg">
+          <p class="mr-14 max-w-md text-gray-100 text-sm font-light">Guys Its Not a real message😘</p>
+          <span class="absolute bottom-0 right-1 text-xs p-0.5 text-gray-300">10:23 pm</span>
+        </div>
+
+        <!-- right message -->
+        <div class="right-msg">
+          <p class="mr-16 max-w-md text-gray-100 text-sm font-light">Yes Guys Its a Chat GPT Generated Message 🧛‍♀️ </p>
+          <span class="absolute bottom-0 right-5 text-xs p-0.5 text-gray-300 mr-0.5">10:23pm</span>
+          <svg  class="absolute bottom-0 right-0 text-xs h-4 w-4 mr-1 mb-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172"
+           style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#20a0ff"><path d="M44.72,144.48c-1.81406,0 -3.57437,-0.72562 -4.86437,-2.01562l-37.84,-37.84c-2.6875,-2.6875 -2.6875,-7.04125 0,-9.72875c2.6875,-2.6875 7.04125,-2.6875 9.72875,0l32.49187,32.49187l77.74938,-93.92812c2.41875,-2.94281 6.75906,-3.34594 9.675,-0.91375c2.92937,2.41875 3.34594,6.75906 0.91375,9.675l-82.56,99.76c-1.22281,1.505 -3.03688,2.40531 -4.97188,2.48594c-0.1075,0.01344 -0.215,0.01344 -0.3225,0.01344zM82.8825,144.46656c1.935,-0.08063 3.73563,-0.98094 4.97188,-2.48594l82.56,-99.76c2.43219,-2.91594 2.01562,-7.25625 -0.91375,-9.675c-2.91594,-2.43219 -7.25625,-2.01563 -9.675,0.91375l-77.74938,93.92812l-1.53187,-1.53187c-2.6875,-2.6875 -7.04125,-2.6875 -9.72875,0c-2.6875,2.6875 -2.6875,7.04125 0,9.72875l6.88,6.88c1.29,1.29 3.05031,2.01562 4.86437,2.01562c0.1075,0 0.215,0 0.3225,-0.01344z"></path></g></g></svg>
+        </div>
+
+        </div>
+      </div>
+
+      <!-- footer -->
+      <!-- msg input container -->
+      <div class="bg-gray-msgInputbg flex flex-auto items-center px-4 py-3 space-x-3">
+        
+        <!-- wrapper -->
+        <div class="flex space-x-2">
+          <svg class="w-8 h-8 text-gray-300 px-1 cursor-pointer" viewBox="0 0 24 24"><path fill="currentColor" d="M9.153 11.603c.795 0 1.439-.879 1.439-1.962s-.644-1.962-1.439-1.962-1.439.879-1.439 1.962.644 1.962 1.439 1.962zm-3.204 1.362c-.026-.307-.131 5.218 6.063 5.551 6.066-.25 6.066-5.551 6.066-5.551-6.078 1.416-12.129 0-12.129 0zm11.363 1.108s-.669 1.959-5.051 1.959c-3.505 0-5.388-1.164-5.607-1.959 0 0 5.912 1.055 10.658 0zM11.804 1.011C5.609 1.011.978 6.033.978 12.228s4.826 10.761 11.021 10.761S23.02 18.423 23.02 12.228c.001-6.195-5.021-11.217-11.216-11.217zM12 21.354c-5.273 0-9.381-3.886-9.381-9.159s3.942-9.548 9.215-9.548 9.548 4.275 9.548 9.548c-.001 5.272-4.109 9.159-9.382 9.159zm3.108-9.751c.795 0 1.439-.879 1.439-1.962s-.644-1.962-1.439-1.962-1.439.879-1.439 1.962.644 1.962 1.439 1.962z"></path></svg>
+          <svg class="w-8 h-8 text-gray-300 px-1 cursor-pointer" viewBox="0 0 24 24" width="24" height="24" class=""><path fill="currentColor" d="M1.816 15.556v.002c0 1.502.584 2.912 1.646 3.972s2.472 1.647 3.974 1.647a5.58 5.58 0 0 0 3.972-1.645l9.547-9.548c.769-.768 1.147-1.767 1.058-2.817-.079-.968-.548-1.927-1.319-2.698-1.594-1.592-4.068-1.711-5.517-.262l-7.916 7.915c-.881.881-.792 2.25.214 3.261.959.958 2.423 1.053 3.263.215l5.511-5.512c.28-.28.267-.722.053-.936l-.244-.244c-.191-.191-.567-.349-.957.04l-5.506 5.506c-.18.18-.635.127-.976-.214-.098-.097-.576-.613-.213-.973l7.915-7.917c.818-.817 2.267-.699 3.23.262.5.501.802 1.1.849 1.685.051.573-.156 1.111-.589 1.543l-9.547 9.549a3.97 3.97 0 0 1-2.829 1.171 3.975 3.975 0 0 1-2.83-1.173 3.973 3.973 0 0 1-1.172-2.828c0-1.071.415-2.076 1.172-2.83l7.209-7.211c.157-.157.264-.579.028-.814L11.5 4.36a.572.572 0 0 0-.834.018l-7.205 7.207a5.577 5.577 0 0 0-1.645 3.971z"></path></svg>
+        </div>
+
+        <!-- input box -->
+        <input id="chatBoxInput" class="flex flex-auto bg-inputBoxBg px-4 py-2.5 border-none outline-none rounded-full text-sm font-light text-gray-100 placeholder-gray-300" type="text" placeholder="Type a message" value="">
+        <svg viewBox="0 0 24 24" width="24" height="24" class="text-gray-300 cursor-pointer"><path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z"></path></svg>
+      </div>
+
+    </div>
+
+    <!-- menu bar toggle buttons -->
+    <div class="absolute hidden right-6 top-12 rounded bg-gray-400 shadow-2xl transition duration-1000 ease-out" id="menuItems2">
+      <div class="relative flex flex-col flex-auto justify-start w-48 pt-2 pb-2">
+        <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-6 py-3" href="">Contact info</a>
+        <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-6 py-3" href="">Select messages</a>
+        <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-6 py-3" href="">Mute notifications</a>
+        <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-6 py-3" href="">Clear messages</a>
+        <a class="hover:bg-gray-700 text-sm text-gray-100 font-light px-6 py-3" href="">Delete chat</a>
+      </div>
+    </div>
+    
+  </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./assets/script.js"></script>
+
+</body>
+</html>
