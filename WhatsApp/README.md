@@ -12,7 +12,7 @@ WhatsApp UI Clones using TailwindCSS ⚡
 [![web](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://cryptochatx.netlify.app/)
 
 ## Sneak Peek of Site 🙈 :
-![whatsapp]https://github.com/user-attachments/assets/8da2eecc-f393-48e5-99aa-6dc320d37ace)
+![whatsapp](https://github.com/user-attachments/assets/8da2eecc-f393-48e5-99aa-6dc320d37ace)
 
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
