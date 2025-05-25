@@ -1,6 +1,5 @@
 ## 🚀 Web UI Clones
 
-<img width="1028" alt="Email Banners-Dark" src="https://github.com/user-attachments/assets/13117988-5819-45fe-a540-6f8194f90ce5">
 
 Website UI Clones using TailwindCSS
 
@@ -21,7 +20,7 @@ Website UI Clones using TailwindCSS
 ![jquery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
 [![web](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://diwanshu-lab.github.io/JavaScript-Projects/)
 
-<img src="https://github.com/user-attachments/assets/13117988-5819-45fe-a540-6f8194f90ce5" height=300 width=500/>
+<img src="https://github.com/user-attachments/assets/20546028-6493-4f01-9af0-8614e8805d33" height=300 width=500/>
 
 ## 📌Contributing Guidelines :
 
@@ -94,7 +93,7 @@ Hurray! You successfully made a contribution!
 <table>
   <tr>
     <td align="center">
-      <img [src="![hero](https://github.com/user-attachments/assets/dc96048d-bbd4-434f-96e2-4c03c799207b)" />
+      <img src="https://github.com/user-attachments/assets/e772d4e3-6874-4c42-9f38-282b31507a50" width="150px" alt="profile" />
       <br/>
       Diwanshu Yadav
       <br/>
